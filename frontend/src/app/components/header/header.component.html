@@ -1,0 +1,38 @@
+<div class="wrapper">
+
+    <div class="header">
+
+        <div id="toggle" class="hamburgueza" *ngIf="currentUsername">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <a id="logo" routerLink="/home">Foro</a>
+
+        <nav class="navbar">
+            <ul class="enlaces">
+                <ng-container *ngIf="currentUsername">
+                    <li><a routerLink="/courses">Courses</a></li>
+                    <li><a routerLink="/topics" class="active">Topics</a></li>
+                    <li><a routerLink="/my-answers">Answers</a></li>
+                </ng-container>
+            </ul>   
+        </nav>
+
+
+        <div class="authenticated__user">
+            <!-- Muestro el icono de inicio de sesión solo si no hay un nombre de usuario actual -->
+            <ul>
+                <li><a routerLink="/login" title="Iniciar Sesión" class="icon__user" *ngIf="!currentUsername"><img src="/assets/user-login.png" alt="Icono de Iniciar Sesión"></a></li>
+                        <!-- Muestro el nombre de usuario y el botón de cierre de sesión solo si hay un nombre de usuario actual -->
+                <li *ngIf="currentUsername" class="menu__logout"><span>{{ currentUsername }}</span><img class="popopo" src="/assets/exit.png" alt="">
+                    <ul class="logout">
+                        <li><button (click)="logout()">Cerrar sesión</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>

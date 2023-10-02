@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+
+<div class="topics__container">
+
+    <div class="button__container">
+        <h2 class="topics__title">Tópicos</h2>
+        <button (click)="mostrarModal = true">Crear nuevo Tópico</button>
+        <app-registertopics *ngIf="mostrarModal" (modalClosed)="mostrarModal = false"></app-registertopics>
+    </div>
+
+
+    <div class="data__container">
+        <div *ngFor="let topic of topics; let i = index" class="topics__data"><!-- Muestro los detalles de cada tópico -->
+            <div class="data___query-title">
+                <div class="partiendo__dos">
+                    <div class="data__icon">
+                        <!-- <span>{{ topic.solved }}</span> -->
+                        <img [src]="topic.solved ? '/assets/check.svg' : '/assets/check-white.svg'" alt="">
+                    </div>
+                    <div class="data__title-navigation">
+                        <h3 class="navigation" (click)="navigateToAnswer(topic)">{{ topic.title }}</h3>
+                        <p>{{ topic.message }}</p>
+                    </div>
+
+                </div>
+
+                <div class="data___creator">
+                    <div class="data__info">
+                        <p>por <span>{{ topic.user.username }}</span></p>
+                    </div>
+                    <div class="data__author">
+                        <p>Creado en {{ topic.created_at | date:'longDate' }}</p>
+                        <button *ngIf="isCurrentUserAuthor(topic) && !topic.solved"
+                            (click)="markTopicAsSolved(topic)">Marcar como Resuelto</button>
+                    </div>
+                </div>
+
+                <div class="menu__vertical" *ngIf="isCurrentUserAuthor(topic)" (click)="abrirCerrarMenu(i)">
+                    <img src="assets/menu-vertical.svg" alt="" width="5px">
+                </div>
+
+                <ul class="menu__topic" *ngIf="menuAbierto[i]" [class.menu__topic--abierto]="menuAbierto[i]">
+                    <li (click)="editarTopico()" *ngIf="isCurrentUserAuthor(topic) && !topic.solved">Editar</li>
+                    <li (click)="eliminarTopico(topic.id, i)" *ngIf="isCurrentUserAuthor(topic) && (!topic.solved || topic.solved && isCurrentUserAuthor(topic))">Eliminar</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>

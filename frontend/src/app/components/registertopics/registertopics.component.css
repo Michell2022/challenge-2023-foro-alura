@@ -1,0 +1,74 @@
+/* Estilo para ocultar el modal por defecto */
+.modal {
+  display: flex;
+  
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo para el contenido del modal */
+.modal__content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Estilo para el botón de cierre (X) */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal__content form .form-group {
+  margin-bottom: 15px;
+}
+
+.modal__content form .form-group > input, textarea, select {
+  border: 1px solid #3f3f3f;
+  border-radius: 5px;
+  width: 100%;
+  padding: 8px;
+}
+
+.modal__content form .form-group > label {
+  display: flex;
+}
+
+/* ESTILOS PARA LOS BOTONES */
+.modal__button {
+  display: flex;
+  justify-content: space-around;
+  justify-items: flex-end;
+}
+
+.modal__button button {
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.modal__button button.registrar__topico {
+  background: #2546ff;
+}
+
+.modal__button button.cancelar__topico {
+  background: #ff2525;
+}

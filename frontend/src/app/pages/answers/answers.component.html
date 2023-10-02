@@ -1,0 +1,20 @@
+<app-header></app-header>
+<p>answers works!</p>
+
+<div class="body">
+    <div class="answers__container">
+
+        <div *ngIf="topic.id !== 0">
+          
+            <h1>{{ topic.title }}</h1>
+            <p>Author: {{ topic.user.username }}</p>
+            <p>{{ formattedDate }}</p> <!-- Muestro la fecha formateada de created_at -->
+            <p>Message: {{ topic.message }}</p>
+
+          </div>
+          <div *ngIf="topic.id === 0">
+            <p>Loading...</p>
+          </div>
+
+    </div>
+</div>

@@ -1,0 +1,32 @@
+
+<div class="login__container">
+    <div *ngIf="expiredMessageVisible" class="expired-session-message">
+        Su sesión ha expirado. Por favor, inicie sesión nuevamente.
+      </div>
+    <div class="border__container">
+        <h2 class="title__login">Iniciar Sesión</h2>
+
+        <p class="information__text">Log in to get in the moment updates on the things that interest you</p>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+            <div class="form-group">
+                <!-- <label for="username">Nombre de Usuario:</label> -->
+                <input type="text" id="username" name="username" autocomplete="username" placeholder="Username" formControlName="username">
+            </div>
+            <div class="form-group">
+                <!-- <label for="password">Contraseña:</label> -->
+                <input type="password" id="password" name="password" autocomplete="new-password" placeholder="Password" formControlName="password">
+            </div>
+        
+            <button type="submit" class="button">Iniciar Sesión</button>
+        
+            <div class="text__login">
+                <span>Don´t have an account ? <a routerLink="/register"> Sign Up Now</a></span>
+            </div>
+
+        </form>
+
+    </div>    
+  </div>
+

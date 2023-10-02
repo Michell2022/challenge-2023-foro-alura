@@ -1,0 +1,11 @@
+.body {
+    width: 100%;
+    min-height: 100vh;
+    background: #eff4f7;
+}
+
+.answers__container {
+    max-width: 90%;
+    padding: 120px 0 50px;
+    margin: 0 auto;
+}

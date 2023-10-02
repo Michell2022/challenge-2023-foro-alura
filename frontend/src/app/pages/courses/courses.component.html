@@ -1,0 +1,13 @@
+<app-header></app-header>
+
+<div class="body">
+
+    <div class="courses__container">
+        <div *ngFor="let course of courses" class="courses__data">
+            <div class="courses__name">
+                <h4>{{ course.name }}</h4>
+                <img src="assets/course.png" alt="Icono de Code" width="50px">
+            </div>
+        </div>
+    </div>
+</div>

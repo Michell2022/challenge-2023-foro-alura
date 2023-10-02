@@ -1,0 +1,35 @@
+<!-- Modal para crear tópico -->
+<div id="createTopicModal" class="modal">
+    <div class="modal__content">
+        <span class="close" (click)="closeCreateTopicModal()">&times;</span>
+        <h2>Crear Tópico</h2>
+        <form (submit)="createTopic()">
+
+            <div class="form-group">
+                <label for="course">Curso:</label>
+                <select id="course" name="course_Id" [(ngModel)]="selectedCourseId" required>
+                    
+                    <option *ngFor="let course of courses" [value]="course.id">{{ course.name }}</option>
+                </select>
+            </div>
+
+            <!-- Campo para el título del tópico -->
+            <div class="form-group">
+                <!-- <label for="titulo">Título:</label> -->
+                <input type="text" id="titulo" name="titulo" placeholder="Ingrese un título" [(ngModel)]="newTopic.title" required>
+            </div>
+
+            <!-- Campo para el mensaje del tópico -->
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" [(ngModel)]="newTopic.message" required></textarea>
+            </div>
+
+            <!-- Botones  -->
+            <div class="modal__button">
+                <button type="submit" class="registrar__topico">Registrar</button>
+                <button type="button" class="cancelar__topico" (click)="closeCreateTopicModal()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

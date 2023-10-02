@@ -1,0 +1,120 @@
+.topics__container {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.button__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 120px 0 20px;
+}
+
+.button__container button {
+    background: #277ae1;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.button__container button:hover {
+    background: #0060d4;
+}
+
+
+.data__container .topics__data {
+    border: 1px solid #c4c4c4;
+    margin: 1px;
+}
+
+.data__container .topics__data h3 {
+    color: #277ae1;
+}
+
+.data__container .data___query-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.partiendo__dos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.partiendo__dos .data__icon {
+    display: flex;
+    place-items: center;
+    margin: 0 35px 0 15px;
+}
+
+
+/* /falta arreglar */
+.partiendo__dos .data__title-navigation h3.navigation {
+    display: flex;
+    cursor: pointer;
+}
+
+/****************************************
+            DATOS DEL CREADOR
+****************************************/
+.data___creator .data__info p,
+.data___creator .data__author p {
+    font-size: 14px;
+}
+
+.data___creator .data__info p span {
+    color: #0060d4;
+}
+
+.data__author button {
+    background: orange;
+    color: #fff;
+    padding: 3px 20px;
+    border-radius: 10px;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.data__author button:hover {
+    background: rgb(16, 204, 179);
+}
+
+/****************************************
+             MENU VERTICAL
+****************************************/
+.menu__vertical {
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.menu__topic {
+    position: absolute;
+    right: 0;
+    background: #fa4f4f;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:979px) {}
+
+@media (max-width:768px) {}

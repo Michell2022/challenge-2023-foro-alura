@@ -1,0 +1,59 @@
+<div class="register__container">
+    <div class="border__container">
+
+        <h2 class="title__register">Registro de Usuario</h2>
+
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <!-- Nombre de usuario -->
+            <div class="form-group" *ngIf="registerForm">
+                <label for="username">Nombre de Usuario:</label>
+                <div class="input-with-icon">
+                    <input type="text" id="username" name="username" autocomplete="username" formControlName="username"
+                    [ngClass]="{
+                        'error-border': registerForm.get('username')?.invalid && registerForm.get('username')?.touched,
+                        'success-border': !registerForm.get('username')?.invalid && registerForm.get('username')?.touched}" />
+                    <!-- Muestra la imagen de verificación o error según la validez -->
+                    <img [src]="registerForm.get('username')?.valid ? '/assets/check.png' : '/assets/incorrect.png'" [alt]="registerForm.get('username')?.valid ? 'Correcto' : 'Incorrecto'" *ngIf="registerForm.get('username')?.touched" class="icon" />
+                </div>
+                <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="error-message">{{ getUsernameErrorMessage() }}</div>
+            </div>
+
+            <!-- Correo Electrónico -->
+            <div class="form-group" *ngIf="registerForm">
+                <label for="email">Correo Electrónico:</label>
+                <div class="input-with-icon">
+                    <input type="email" id="email" name="email" autocomplete="email" formControlName="email"
+                    [ngClass]="{
+                        'error-border': registerForm.get('email')?.invalid && registerForm.get('email')?.touched,
+                        'success-border': !registerForm.get('email')?.invalid && registerForm.get('email')?.touched}" />
+                    <!-- Muestra la imagen de verificación o error según la validez del correo -->
+                    <img [src]="registerForm.get('email')?.valid ? '/assets/check.png' : '/assets/incorrect.png'" [alt]="registerForm.get('email')?.valid ? 'Correcto' : 'Incorrecto'" *ngIf="registerForm.get('email')?.touched" class="icon" />
+                </div>
+                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error-message">{{ getErrorMessageEmail() }}</div>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="form-group" *ngIf="registerForm">
+                <label for="password">Contraseña:</label>
+                <div class="input-with-icon">
+                    <input type="password" id="password" name="password" autocomplete="new-password" formControlName="password" class="view__password"
+                    [ngClass]="{
+                        'error-border': registerForm.get('password')?.invalid && registerForm.get('password')?.touched,
+                        'success-border': !registerForm.get('password')?.invalid && registerForm.get('password')?.touched} "/>
+                    <!-- Muestra la imagen de verificación o error según la validez de la contraseña -->
+                    <img [src]="registerForm.get('password')?.valid ? '/assets/check.png' : '/assets/incorrect.png'" [alt]="registerForm.get('password')?.valid ? 'Correcto' : 'Incorrecto'" *ngIf="registerForm.get('password')?.touched" class="icon" />
+                    
+                    <img src="/assets/eye-fill.svg" class="view__password__icon" alt="">
+                    
+                </div>
+                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-message">{{ getErrorMessagePassword() }}</div>
+                </div>
+
+            <!-- Botón de Registro -->
+                <button type="submit" [ngClass]="{ 'disabled': !isFormValid() }" >Registrarse</button>
+        </form>
+
+    </div>
+</div>
