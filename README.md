@@ -27,7 +27,7 @@
  
 ## Descripción del Proyecto 
 
-El proyecto "Foro Alura" es una API REST desarrollada con Spring Boot que replica el funcionamiento de un foro en línea donde los estudiantes pueden realizar preguntas sobre los cursos ofrecidos en la plataforma Alura. Esta API permite a los usuarios realizar operaciones básicas de CRUD (Create, Read, Update, Delete) en los temas de discusión (tópicos) y las respuestas asociadas a ellos.
+El proyecto "Foro Alura" es una API REST full stack web application desarrollada con Spring Boot exclusivamente para estudiantes de Alura. Su objetivo principal es crear un espacio en línea donde los estudiantes pueden compartir información, fomentar la discusión y el aprendizaje relacionados con los cursos ofrecidos en la plataforma Alura. Esta API permite a los usuarios realizar operaciones básicas de CRUD (Create, Read, Update, Delete) en los temas de discusión (tópicos) y las respuestas asociadas a ellos.
 
 Además, se siguen las mejores prácticas de la arquitectura REST y se aplican validaciones basadas en las reglas de negocio. La información se almacena en una base de datos para su persistencia.
 
